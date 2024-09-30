@@ -1,0 +1,121 @@
+CLO
+
+ls -a - zobrazenie adresarov a suborov admina
+
+ls -la - zobrazenie opravneni pri suboroch a adresarov admina
+
+ls -l zobrazenie opravnenia suborov v konkrétnom adresari
+
+ls -l /usr/bin/passwd
+
+ls -l /
+
+ls -l /tmp
+
+who - zobrazi informacie o prihlasenych uzivateloch
+
+users - iba mena
+
+groups - v akých skupinach je uzivatel clenom
+
+id - aj uzivatela aj skupiny (aj cisla ako IDcka)
+
+passwd -S - vypise informacie o konte
+
+ls -a /etc/skel
+
+nano /etc/adduser.conf - nastavenia pre vytvaranie uzivatelov
+
+nano /etc/deluser.conf - nastavenia pri vymazavani uzivatelov
+
+
+/DHOME - adresar kde sa vytvaraju uzivatelske konta
+
+
+sudo adduser [nazov uzivatela] - vytvorenie konta žiak za dočasného admina
+
+sudo deluser [nazov uzivatela] - vymazanie užívateľa
+
+sudo deluser --remove-home [nazov uzivatela] - vymaze aj domovsky adresar
+
+
+CTRL + ALT + F2 - prepnutie pouzivatela
+
+CTRL + ALT + F1 - prepnutie naspat na admina
+
+
+z uzivatela vytvoreneho adminom nejde vytvorit nového uzivatela
+
+napr uzivatel ziak nedokaze vytvorit ziak2
+
+
+sudo passwd -l [meno uzivatela] - zablokovanie hesla uzivatela (iba heslo, nie konto)
+
+sudo passwd -u [meno uzivatela] - odblokuje heslo uzivatela (iba heslo, nie konto)
+
+sudo nano /etc/shadow - zistime ci hesla su zablokovane
+
+sudo nano /etc/passwd - infa o uzivatelch (plny zoznam)
+
+sudo nano /etc/group - o skupinach
+
+
+sudo usermod --expiredate 1 ziak - zablokovanie konta pomocou uvedenia dátumu kedy
+
+sudo usermod --expiredate -1 ziak - odblokovanie konta
+
+sudo groups [nazov uzivatela] - v akých skupinach je uzivatel
+
+sudo adduser [nazov uzivatela] [nazov skupiny] - pridanie uzivatela do skupiny
+
+sudo usermod -aG [nazov skupiny] [nazov uzivatela] - pridanie uzivatela do skupiny
+
+sudo usermod -rG [nazov skupiny] [nazov uzivatela] - odstranenie uzivatela do skupiny
+
+sudo deluser [nazov uzivatela] [nazov skupiny] - odstránenie uzivatela zo skupiny
+
+chmod u+x ./subor1 - pridanie opravnenia suboru x (execute)
+
+chmod g-w ./subor1 - odstranenie opravnenia suboru w (write)
+
+chmod o=x ./subor1
+
+chmod a=rw ./subor1
+
+chmod og=wx ./subor1
+
+chmod 664 ./subor1
+
+sudo chown [nazov uzivatela] [nazov suboru] - zmenenie vlastnictva suboru
+
+sudo chown [nazov uzivatela]:[nazov uzivatela][nazov suboru]
+
+sudo chown :[nazov uzivatela] [nazov suboru]
+
+sudo chown [nazov uzivatela]: [nazov suboru]
+
+umask - sluzi len pri vytvarani suboru (jeho opravnenia)
+
+0002
+
+666-664
+
+chmod 0664 ./subor1 - s nulou to vymaze vsetky specialne opravnenia
+
+umask [cislo] - zmeni masku opraveni suboru ale nevie vytvorit napr. umask 00000
+
+
+* = znamena hocijaky znak (v podstate vsetko)
+
+
+
+---
+
+421
+
+rwx
+
+
+664 = rw-rw-r--
+
+42 42 4
